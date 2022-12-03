@@ -1,13 +1,17 @@
-import { useState, useEffect } from 'react';
-import './App.css';
+import { useState, useEffect } from "react";
+import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Dasdboard from './components/Dashboard';
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import Dasdboard from "./components/Dashboard";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useNavigate,
+} from "react-router-dom";
 // import axios from "axios";
 
-
-
 function App() {
+  // const navigate = useNavigate();
 
   const [data, setData] = useState([]);
 
@@ -17,16 +21,23 @@ function App() {
   // }, [])
 
   return (
-    <div className='App'>
-      <p>
-        hello world!!!
-      </p>
-      <Router>
-        <Routes>
-          <Route path='/dashbord' element={<Dasdboard/>}/>
-        </Routes>
-      </Router>
-    </div>
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div>
+              <p>
+                hello world!!!
+                <button>Login</button>
+              </p>
+            </div>
+          }
+        />
+
+        <Route path="/dashbord" element={<Dasdboard />} />
+      </Routes>
+    </Router>
     // <div className="Auth-form-container">
     //   {/* <img src="https://www.seydevplus.com/wp-content/uploads/devplus-logo-no-tagline-01.png" /> */}
     //   <div></div>
@@ -62,8 +73,7 @@ function App() {
     //     </form>
     //   </div>
     // </div>
-  )
+  );
 }
 
-
-export default App
+export default App;

@@ -1,10 +1,12 @@
 import React, { Fragment } from "react";
-import {Table, Button} from 'react-bootstrap';
+import { Table, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 // import "bootstrap/dist/css/bootstrap.magin.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Products from "./products";
 
 function Dashboard() {
+  const navigate = useNavigate();
   return (
     <Fragment>
       <div style={{ magin: "10rem" }}>
@@ -38,6 +40,7 @@ function Dashboard() {
             )}
           </body>
         </table>
+        <button onClick={() => navigate("/")}>login</button>
       </div>
     </Fragment>
   );
